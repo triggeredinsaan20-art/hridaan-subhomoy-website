@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#fff8ef" />
+<meta name="description" content="Hridaan & Subhomoy — a bright place to explore, learn, and grow." />
+<title>Hridaan & Subhomoy | Learn, Explore, Grow</title>
+<style>
+  :root{--ink:#20213a;--muted:#686981;--paper:#fffaf3;--pink:#ff668a;--yellow:#ffd45a;--blue:#6c7cff;--mint:#64d9bb;--purple:#a878f5;--line:#ece7f3;--shadow:0 18px 55px rgba(49,39,91,.12)}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0}
+  .wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+  .nav{position:sticky;top:0;z-index:20;background:rgba(255,250,243,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(236,231,243,.85)}
+  .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.7px;font-size:1.08rem}
+  .brand-mark{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,var(--pink),var(--purple));color:white;font-size:1.15rem;box-shadow:0 8px 20px #a878f544}
+  .links{display:flex;gap:28px;align-items:center;color:var(--muted);font-size:.93rem;font-weight:700}
+  .links a:hover{color:var(--blue)}.nav-cta,.btn{border-radius:999px;padding:13px 19px;font-weight:850;transition:transform .2s,box-shadow .2s}
+  .nav-cta{background:var(--ink);color:#fff}.nav-cta:hover,.btn:hover{transform:translateY(-3px);box-shadow:0 12px 24px #20213a22}
+  .menu-btn{display:none;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+  .hero{position:relative;padding:76px 0 84px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:50px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:800;font-size:.82rem;color:#5f5b86}
+  .dot{width:8px;height:8px;border-radius:50%;background:#42c7a4;box-shadow:0 0 0 5px #42c7a422}
+  h1{font-size:clamp(3rem,6.5vw,5.6rem);line-height:.99;letter-spacing:-.075em;margin:22px 0 20px;max-width:650px}
+  .gradient-text{background:linear-gradient(100deg,#f14e83,#8b61ef 56%,#3976f6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{font-size:1.1rem;line-height:1.8;color:var(--muted);max-width:530px;margin:0}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.btn-primary{background:var(--ink);color:#fff;box-shadow:0 10px 22px #20213a20}.btn-secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .mini-proof{display:flex;align-items:center;gap:12px;margin-top:27px;color:var(--muted);font-size:.88rem;font-weight:700}
+  .avatars{display:flex}.avatar{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--paper);margin-left:-7px;font-size:.9rem}.avatar:first-child{margin-left:0;background:#ffe1a8}.avatar:nth-child(2){background:#d7d8ff}.avatar:nth-child(3){background:#c6f5e8}
+  .artboard{min-height:430px;position:relative;display:grid;place-items:center}
+  .blob{position:absolute;width:360px;height:360px;border-radius:44% 56% 63% 37% / 44% 40% 60% 56%;background:linear-gradient(135deg,#ffd95e,#ff9fb7);transform:rotate(-12deg);animation:morph 9s ease-in-out infinite}
+  .study-card{position:relative;width:min(390px,90%);background:#fff;border:1px solid #fff;border-radius:28px;padding:25px;box-shadow:var(--shadow);transform:rotate(2deg);animation:float 5s ease-in-out infinite}
+  .card-top{display:flex;justify-content:space-between;align-items:center}.card-label{font-size:.77rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase;color:#8d8ca4}
+  .sparkle{font-size:1.7rem}.study-card h3{font-size:1.55rem;letter-spacing:-.04em;margin:15px 0 5px}.study-card p{font-size:.9rem;line-height:1.55;margin:0 0 20px}
+  .progress-row{display:flex;justify-content:space-between;font-size:.78rem;font-weight:800;margin-bottom:8px}.progress{height:9px;background:#f1edf7;border-radius:99px;overflow:hidden}.progress span{display:block;width:72%;height:100%;background:linear-gradient(90deg,var(--pink),var(--purple));border-radius:99px}
+  .lesson-pills{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}.pill{font-size:.77rem;font-weight:800;padding:8px 11px;border-radius:10px;background:#fff2c8}.pill:nth-child(2){background:#e7e5ff}.pill:nth-child(3){background:#d9f8ee}
+  .floaty{position:absolute;display:grid;place-items:center;width:64px;height:64px;border-radius:20px;box-shadow:0 12px 28px #20213a18;font-size:1.8rem;animation:float 4.5s ease-in-out infinite}.floaty.book{background:#fff;left:3%;top:12%;transform:rotate(-10deg)}.floaty.bulb{background:#d9f8ee;right:1%;top:17%;animation-delay:-1.2s}.floaty.star{background:#e8e4ff;right:7%;bottom:10%;animation-delay:-2s}
+  .section{padding:78px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 38px}.kicker{color:#8a69dc;font-weight:900;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}.section h2{font-size:clamp(2.1rem,4vw,3.35rem);letter-spacing:-.06em;line-height:1.05;margin:12px 0}.section-head p{color:var(--muted);line-height:1.75;margin:0}
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{border:1px solid var(--line);border-radius:24px;padding:25px;background:#fff;transition:transform .25s,box-shadow .25s}.feature:hover{transform:translateY(-7px);box-shadow:var(--shadow)}.feature-icon{width:54px;height:54px;display:grid;place-items:center;border-radius:17px;font-size:1.55rem;margin-bottom:18px}.feature:nth-child(1) .feature-icon{background:#ffe3ea}.feature:nth-child(2) .feature-icon{background:#e5e2ff}.feature:nth-child(3) .feature-icon{background:#d9f8ed}.feature h3{margin:0 0 8px;font-size:1.15rem}.feature p{margin:0;color:var(--muted);line-height:1.7;font-size:.94rem}
+  .subjects{background:#f2efff}.subject-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.subject{padding:20px;border-radius:21px;background:#fff;border:1px solid #e7e1ff;transition:transform .2s}.subject:hover{transform:translateY(-5px)}.subject .emoji{font-size:2rem}.subject h3{margin:13px 0 6px;font-size:1.05rem}.subject p{font-size:.86rem;line-height:1.55;color:var(--muted);margin:0 0 16px}.subject button{font-size:.84rem;font-weight:900;color:#6752cf;background:#f1eeff;border-radius:999px;padding:9px 12px}.subject button:hover{background:#e4deff}
+  .quote-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}.quote-art{background:linear-gradient(140deg,#ffccdb,#ffe9a6);border-radius:30px;min-height:280px;display:grid;place-items:center;font-size:6rem;position:relative;overflow:hidden}.quote-art:after{content:"";position:absolute;width:210px;height:210px;border:2px dashed #fff9;border-radius:50%;animation:spin 24s linear infinite}.quote h2{font-size:clamp(2.1rem,4vw,3.2rem);line-height:1.08;letter-spacing:-.06em;margin:12px 0}.quote blockquote{font-size:1.18rem;line-height:1.8;color:#555670;margin:18px 0}.quote small{color:#8c7bc8;font-weight:900}
+  .cta{padding:0 0 80px}.cta-panel{position:relative;overflow:hidden;border-radius:30px;background:var(--ink);color:white;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:30px}.cta-panel:after{content:"✦";position:absolute;font-size:14rem;color:#ffffff09;right:27%;top:-90px}.cta-panel h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.06em;margin:0 0 12px;max-width:600px}.cta-panel p{color:#c7c7dd;line-height:1.7;margin:0;max-width:560px}.cta-panel .btn{background:var(--yellow);color:var(--ink);white-space:nowrap;position:relative;z-index:1}
+  footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.86rem}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:15px}.footer-brand{font-weight:900;color:var(--ink)}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--ink);color:white;border-radius:14px;padding:13px 18px;box-shadow:var(--shadow);z-index:40;transition:all .25s;font-weight:700;font-size:.9rem;max-width:calc(100% - 32px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+  @keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}@keyframes morph{0%,100%{border-radius:44% 56% 63% 37% / 44% 40% 60% 56%;transform:rotate(-12deg)}50%{border-radius:56% 44% 38% 62% / 55% 60% 40% 45%;transform:rotate(4deg)}}@keyframes spin{to{transform:rotate(360deg)}}
+  @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:20px}.hero{padding-top:55px}.artboard{min-height:370px}.features{grid-template-columns:1fr 1fr}.subject-grid{grid-template-columns:1fr 1fr}.quote-wrap{grid-template-columns:1fr}.quote-art{min-height:220px}.cta-panel{align-items:flex-start;flex-direction:column;padding:35px}}
+  @media(max-width:620px){.wrap{width:min(100% - 28px,1160px)}.nav-inner{height:66px}.menu-btn{display:block}.links{display:none;position:absolute;top:66px;left:0;right:0;background:var(--paper);padding:18px 22px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:17px}.links.open{display:flex}.nav-cta{display:none}.hero{padding:44px 0 55px}h1{font-size:clamp(3rem,15vw,4.5rem)}.hero p{font-size:1rem}.artboard{min-height:330px}.blob{width:280px;height:280px}.study-card{padding:20px}.floaty{width:52px;height:52px;font-size:1.4rem;border-radius:16px}.floaty.book{left:0}.floaty.bulb{right:0}.section{padding:58px 0}.features{grid-template-columns:1fr}.subject-grid{gap:10px}.subject{padding:15px}.subject p{font-size:.82rem}.cta{padding-bottom:55px}.cta-panel{padding:27px 23px}.footer-inner{flex-direction:column;align-items:flex-start}.mini-proof{font-size:.8rem}}
+  @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#home" aria-label="Hridaan and Subhomoy home"><span class="brand-mark">H✦S</span><span>Hridaan <span style="color:#a878f5">&</span> Subhomoy</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="links" id="navLinks" aria-label="Main navigation">
+      <a href="#about">Our idea</a><a href="#subjects">Explore</a><a href="#inspiration">Inspiration</a>
+    </nav>
+    <a class="nav-cta" href="#subjects">Start exploring ↗</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow"><span class="dot"></span> A little curiosity goes a long way</span>
+      <h1>Big ideas.<br><span class="gradient-text">Bright minds.</span></h1>
+      <p>Welcome to Hridaan & Subhomoy — a cheerful corner for curious learners. Discover new ideas, explore different subjects, and make every day a chance to grow.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#subjects">Explore learning <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="#about">Get to know us</a></div>
+      <div class="mini-proof"><div class="avatars"><span class="avatar">📚</span><span class="avatar">💡</span><span class="avatar">🚀</span></div><span>Stay curious. Keep discovering.</span></div>
+    </div>
+    <div class="artboard reveal" aria-label="Illustration of a learning progress card">
+      <div class="blob"></div><div class="floaty book" aria-hidden="true">📚</div><div class="floaty bulb" aria-hidden="true">💡</div><div class="floaty star" aria-hidden="true">✨</div>
+      <div class="study-card">
+        <div class="card-top"><span class="card-label">Your learning journey</span><span class="sparkle">🌈</span></div>
+        <h3>Small steps, big progress.</h3><p>Every question is the start of something amazing.</p>
+        <div class="progress-row"><span>Curiosity level</span><span>Always growing!</span></div><div class="progress"><span></span></div>
+        <div class="lesson-pills"><span class="pill">🔬 Science</span><span class="pill">➗ Maths</span><span class="pill">🌍 The world</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="kicker">Learning, reimagined</span><h2>Make room for <span class="gradient-text">wonder.</span></h2><p>Learning is more than memorising facts. It is about asking better questions, trying new things, and finding connections in the world around us.</p></div>
+    <div class="features">
+      <article class="feature reveal"><div class="feature-icon">🧠</div><h3>Think differently</h3><p>Be curious, question what you see, and look for more than one way to solve a problem.</p></article>
+      <article class="feature reveal"><div class="feature-icon">🎨</div><h3>Make it creative</h3><p>Turn ideas into colourful projects, simple explanations, and discoveries you can share.</p></article>
+      <article class="feature reveal"><div class="feature-icon">🚀</div><h3>Keep growing</h3><p>Celebrate progress, learn from mistakes, and take the next small step with confidence.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section subjects" id="subjects">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="kicker">Pick a path</span><h2>What are you curious about?</h2><p>Choose a subject to get a tiny spark of inspiration. The best learning journeys start with one question.</p></div>
+    <div class="subject-grid">
+      <article class="subject reveal"><div class="emoji">🔬</div><h3>Science Lab</h3><p>Explore how nature, matter, and the universe work.</p><button data-topic="Science">Spark an idea ↗</button></article>
+      <article class="subject reveal"><div class="emoji">➗</div><h3>Maths Zone</h3><p>Find patterns, solve puzzles, and think logically.</p><button data-topic="Maths">Spark an idea ↗</button></article>
+      <article class="subject reveal"><div class="emoji">🌍</div><h3>Our World</h3><p>Discover places, people, history, and our planet.</p><button data-topic="Social Studies">Spark an idea ↗</button></article>
+      <article class="subject reveal"><div class="emoji">📖</div><h3>Language Corner</h3><p>Tell stories, build vocabulary, and express ideas.</p><button data-topic="Languages">Spark an idea ↗</button></article>
+      <article class="subject reveal"><div class="emoji">💻</div><h3>Tech & Coding</h3><p>Learn how digital tools turn ideas into reality.</p><button data-topic="Technology">Spark an idea ↗</button></article>
+      <article class="subject reveal"><div class="emoji">🎨</div><h3>Art Studio</h3><p>Mix colours, experiment, and create something yours.</p><button data-topic="Art">Spark an idea ↗</button></article>
+      <article class="subject reveal"><div class="emoji">🌱</div><h3>Life Skills</h3><p>Practise focus, teamwork, and everyday problem-solving.</p><button data-topic="Life skills">Spark an idea ↗</button></article>
+      <article class="subject reveal"><div class="emoji">🧩</div><h3>Brain Teasers</h3><p>Give your brain a fun challenge and test your ideas.</p><button data-topic="Brain teasers">Spark an idea ↗</button></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="inspiration">
+  <div class="wrap quote-wrap">
+    <div class="quote-art reveal" aria-hidden="true">🌟</div>
+    <div class="quote reveal"><span class="kicker">A thought to keep</span><h2>Progress is built one curious question at a time.</h2><blockquote>“You don't have to know everything today. Just be willing to learn one new thing.”</blockquote><small>— A reminder from Hridaan & Subhomoy</small></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap"><div class="cta-panel reveal"><div><h2>Your next great idea starts here.</h2><p>Stay curious, try something new, and make learning your own adventure.</p></div><a class="btn" href="#home">Back to the top ↑</a></div></div>
+</section>
+</main>
+
+<footer><div class="wrap footer-inner"><span class="footer-brand">Hridaan & Subhomoy ✦</span><span>Made for curious minds, with a little colour.</span><span>© <span id="year"></span> Learn • Explore • Grow</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+  const menuBtn=document.getElementById('menuBtn');
+  const navLinks=document.getElementById('navLinks');
+  menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'✕':'☰';});
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+  const toast=document.getElementById('toast');let toastTimer;
+  const ideas={
+    'Science':'Try this: Why do you see a rainbow after rain? Explore how sunlight and water droplets work together.',
+    'Maths':'Try this: Can you find a real-life example of symmetry in a building, leaf, or logo?',
+    'Social Studies':'Try this: Pick a place on a map and discover one surprising fact about its history or geography.',
+    'Languages':'Try this: Describe your favourite place in five vivid words, then turn them into a short story.',
+    'Technology':'Try this: Think of a repetitive task and sketch a simple set of steps a computer could follow.',
+    'Art':'Try this: Create a picture using only three colours and simple shapes.',
+    'Life skills':'Try this: Choose one small goal for today and break it into three easy steps.',
+    'Brain teasers':'Try this: If you double a number and add 6, the result is 20. What was the number?'
+  };
+  document.querySelectorAll('[data-topic]').forEach(btn=>btn.addEventListener('click',()=>{toast.textContent=ideas[btn.dataset.topic];toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),5000);}));
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const revealEls=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});revealEls.forEach(el=>observer.observe(el));}
+  else revealEls.forEach(el=>el.classList.add('visible'));
+</script>
+</body>
+</html>
